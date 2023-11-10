@@ -1,5 +1,6 @@
 # finalproject
 Website using Flask and Spotify WebAPI (in progress)
+This README.md is a concept !
 
 # Spotify Stats Viewer
 ## Project Overview
