@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(215, 215, 215);
+}
+
+
+.list-group-item, .list-group-item-action {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+

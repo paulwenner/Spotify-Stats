@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+
+<h1 class="text-center"> Top Songs </h1>
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Song</th>
+                <th scope="col">Artist</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for track in top_tracks %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="{{ track.link }}">{{ track.name }}</a></td>
+                <td>{{ track.artist }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
