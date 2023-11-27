@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Top Artists
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="text-center"> Top Artists </h1>
+    <div class="mt-5">
+
+    <nav class="nav d-flex align-items-center justify-content-center">
+        <form action="/top_artists" method="post" class="nav-item me-2">
+            <input type="hidden" name="action" value="change_time_range">
+            <button class="btn btn-primary" type="submit" name="time_range" value="long_term">Long term</button>
+        </form>
+        <form action="/top_artists" method="post" class="nav-item me-2">
+            <input type="hidden" name="action" value="change_time_range">
+            <button class="btn btn-primary" type="submit" name="time_range" value="medium_term">Medium term</button>
+        </form>
+        <form action="/top_artists" method="post" class="nav-item">
+            <input type="hidden" name="action" value="change_time_range">
+            <button class="btn btn-primary" type="submit" name="time_range" value="short_term">Short term</button>
+        </form>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            {% for artist in top_artists %}
+                <div class="col-md-4 mt-5 text-center d-flex align-items-center justify-content-center"">
+                    <div class="card bg-semiwhite highlight" style="width: 18rem;">
+                        <!-- Display artist image -->
+                        <img src="{{ artist.image }}" class="card-img-top" alt="{{ artist.name }}" width="300" height="300" style="object-fit: cover;">
+                        <div class="card-body">
+                            <!-- Display artist ranking -->
+                            <h6 class="card-title"> #{{ loop.index }} </h6>
+                            <!-- Display artist name -->
+                            <h5 class="card-title"> {{ artist.name }} </h5>
+                            <!-- Display artist genres -->
+                            <p class="card-text">{{ artist.genres }}</p>
+                            <!-- Provide a link to listen to the artist on Spotify -->
+                            <a href="{{ artist.link }}" class="btn btn-primary" target="_blank">Listen on Spotify</a>
+                        </div>
+                    </div>
+                </div>
+                {% if loop.index % 3 == 0 %}
+                    </div><div class="row mt-5">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
