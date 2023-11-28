@@ -30,6 +30,9 @@ Access the App: Open a web browser
 Contributing
 Feedback and contributions are welcome. Please feel free to fork the repository, make changes, and create a pull request.
 
+
+Important: The Contant form backend isn't set up yet because of the need to include sensitive information. But you could simply do it for yourself with flask_mail for example
+
 ## Information
 "A virtual environment must have been created, and all packages must be installed.
 
